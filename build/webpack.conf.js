@@ -1,10 +1,10 @@
-const path = require('path');
+const path = require('path')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
-};
+}
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -27,8 +27,14 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        include: [resolve('src')]
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            babelrc: false,
+            presets: ['env']
+          }
+        }
       },
       {
         test: /\.s[a|c]ss$/,
@@ -44,16 +50,16 @@ module.exports = {
           use: 'css-loader'
         })
       },
-      { 
-        test: /\.html$/, 
+      {
+        test: /\.html$/,
         loader: 'raw-loader'
       },
       {
         test: /\.(png|jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
         loader: 'url-loader'
       },
-      { 
-        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+      {
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'file-loader'
       }
     ]
@@ -61,4 +67,4 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('dist.css'),
   ]
-};
+}
