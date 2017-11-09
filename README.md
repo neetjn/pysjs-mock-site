@@ -4,6 +4,9 @@
 
 # pysjs-mock-site
 
+[![build](https://travis-ci.org/neetjn/pysjs-mock-site.svg?branch=master)](https://travis-ci.org/neetjn/pysjs-mock-site)
+[![Join the chat at https://gitter.im/riot-view-router/Lobby](https://badges.gitter.im/riot-view-router/Lobby.svg)](https://gitter.im/riot-view-router/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Mock website created with angular.js 1.6 and bulmacss for unit testing [pyselenium-js](git@github.com:neetjn/pyselenium-js.git).
 
 ### Use
